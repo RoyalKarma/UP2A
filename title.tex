@@ -1,0 +1,37 @@
+\makeatletter
+\begin{titlepage}
+    \clearpage
+    \vspace*{4cm}
+    \begin{center}
+    \begin{minipage}{.6\textwidth}
+    \begin{center}
+    {\Huge \bfseries \sffamily \@title \par}
+    % Pokud je '\subtitle}' prázdný text
+    \ifthenelse{\equal{\subtitle}{}}
+    {
+        % nic nevypisuj
+    }
+    {
+        % jinak ho vykresli velkou italikou
+        \vspace{1.5cm}
+        {\Large\itshape  \subtitle \par}
+    }
+    
+    \end{center}
+    \end{minipage}
+    \end{center}
+    % Odskočení dospod stránky
+    \vfill
+
+    % Tabulka s informacemi o dokumentu
+	{
+	\begin{tabular}{ ll }
+        \ifthenelse{\equal{\@author}{}}{}{Text: & \@author}
+        \ifthenelse{\equal{\grammar}{}}{}{\\Korektura: & \grammar}
+        \ifthenelse{\equal{\formatting}{}}{}{\\Formátování: & \formatting\\}
+    \end{tabular}
+	}
+    \hfill {\large \today\par}
+    \clearpage
+\end{titlepage}
+\makeatother
