@@ -1,148 +1,35 @@
-% Soubory musí být v kódování, které je nastaveno v příkazu \usepackage[...]{inputenc}
+% Povinný argument: Kód předmětu
+\newcommand{\subject}{BPC-UP2A}
+% Povinný argument: Název předmětu
+\newcommand{\subjectname}{Úvod do práva ICT 2}
+% Povinný argument: Seznam autorů
+\newcommand{\authors}{Karma, Bořek}
+% Povinný argument: Seznam korektorů
+\newcommand{\corrections}{Nikdo, protože neumíme česky}
+% Nepovinný argument: Popis dokumentu
+\newcommand{\docdesc}{Příprava na zkoušku}
+% Nepovinný argument: Cílová skupina dokumentu
+\newcommand{\docgroup}{Informační bezpečnost, FEKT VUT}
+% Nepovinný argument: URL repozitáře nebo jiný odkaz na dokument
+\newcommand{\docurl}{https://github.com/RoyalKarma/UP2A}
 
-% Dokument třídy 'zpráva', vhodná pro sazbu závěrečných prací s kapitolami
-% Změna typu na 'report' povolí použití i nadpisu 'chapter'
-\documentclass[
-    % Velikost základního písma je 12 bodů
-    12pt,
-    % Formát papíru je A4
-    a4paper,
-    % Jednostranný tisk
-    oneside,
-    % Záložky a metainformace ve výsledném  PDF budou v kódování unicode
-    unicode,
-]{article}
-
-%%%%%%%%%%%%
-% DŮLEŽITÉ %
-%%%%%%%%%%%%
-
-% Název a popis dokumentu
-\title{UP2A}
-\newcommand{\subtitle}{Otázky ke zkoušce}
-% Autor, korektura, formátování
-\author{Karma a Bořek}
-\newcommand{\grammar}{nikdo, protože neumíme česky}
-\newcommand{\formatting}{nikdo}
-
-%%%%%%%%%%%%%%%%%%%%
-% OBECNÉ NASTAVENÍ %
-%%%%%%%%%%%%%%%%%%%%
-
-% Kódování zdrojových souborů
-\usepackage[utf8]{inputenc}
-% Kódování výstupního souboru
-\usepackage[T1]{fontenc}
-% Podpora češtiny
-\usepackage[czech]{babel}
-
-% Geometrie stránky
-\usepackage[
-    % Vnitřní a vnější okraj
-    hmargin={25mm,25mm},
-    % Horní a dolní okraj
-    vmargin={25mm,25mm},
-    % Velikost zápatí
-    footskip=17mm,
-    % Vypnutí záhlaví
-    nohead,
-]{geometry}
-
-% Zajištění kopírovatelnosti a prohledávanosti vytvořených PDF
-\usepackage{cmap}
-% Podmínky (pro použití v titulní straně)
-\usepackage{ifthen}
-
-%%%%%%%%%%%%%%%
-% FORMÁTOVÁNÍ %
-%%%%%%%%%%%%%%%
-
-% Nastavení stylu nadpisů
-\usepackage{sectsty}
-% Formátování obsahů
-\usepackage{tocloft}
-% Možnost odstranění mezer mezi řádky v seznamech (pomocí '[noitemsep]')
-\usepackage{enumitem}
-% Sázení správných uvozovek pomocí '\enquote{}'
-\usepackage{csquotes}
-% Vynucení umístění poznámek pod čarou vespod stránky
-\usepackage[bottom]{footmisc}
-
-% Bezpatkové sázení nadpisů
-\allsectionsfont{\sffamily}
-% Změna formátování nadpisu a podnadpisů v Obsahu
-\renewcommand{\cfttoctitlefont}{\Large\bfseries\sffamily}
-\renewcommand{\cftsubsecdotsep}{\cftdotsep}
-
-%%%%%%%%%%
-% ODKAZY %
-%%%%%%%%%%
-
-% Tvorba hypertextových odkazů
-\usepackage[
-    breaklinks=true,
-    hypertexnames=false,
-]{hyperref}
-% Nastavení barvení odkazů
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=blue
-}
-
-%%%%%%%%%%%%%%%%%%
-% OBRÁZKY, GRAFY %
-%%%%%%%%%%%%%%%%%%
-
-% Vkládání obrázků
-\usepackage{graphicx}
-% Nastavení popisů obrázků, výpisů a tabulek
-\usepackage{caption}
-% Grafy a vektorové obrázky
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-
-%%%%%%%%%%%%%%
-% MATEMATIKA %
-%%%%%%%%%%%%%%
-
-% Sázení matematiky a matematických symbolů ('\mathbb{}')
-\usepackage{amsmath}
-\usepackage{amssymb}
-
-% Náhrada za \mod a \pmod, které mají přehaně velký prostor před svou značkou
-\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
-\newcommand{\Pmod}[1]{\ (\mathrm{mod}\ #1)}
-% Náhrada za \forall, které kolem sebe prostor nemá žádný
-\newcommand{\Forall}{\ \forall\ }
-
-%%%%%%%%%%%%%%%%%
-% ZDROJOVÉ KÓDY %
-%%%%%%%%%%%%%%%%%
-
-% Sazba zdrojových kódů
-\usepackage[formats]{listings}
-% Sazba zdrojových kódů
-\usepackage[newfloat]{minted}
-% Formátování 'minted' kódů
-\usemintedstyle{pastie}
-% Přepnutí prostředí 'code' do režimu výpisu kódu
-\newenvironment{code}{\captionsetup{type=listing}}{}
-
-%%%%%%%%%
-% START %
-%%%%%%%%%
+\input{shared}
+\clearpage
 
 \begin{document}
 
-% Nastavení názvu výpisu kódu
-\SetupFloatingEnvironment{listing}{name=Výpis kódu}
+\pagenumbering{gobble}
+\setcounter{page}{0}
 
-% Vložení titulky, obsahu a samotného textu
-\include{title}
+\titulka{}
+
+% Do jaké hloubky se vypíše obsah (1 - section, 2 - subsection, ...)
+\setcounter{tocdepth}{2}
 \tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
 \include{text/okruh1}
 \include{text/okruh2}
 \include{text/okruh3}
