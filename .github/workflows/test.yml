@@ -1,0 +1,23 @@
+name: Test if template is possible to be built
+
+on:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+    branches:
+      - main
+
+jobs:
+  # build šablony
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+
+      # kompilace
+      - name: Build šablony
+        uses: xu-cheng/latex-action@v2
+        with:
+          latexmk_shell_escape: true
+          root_file: main.tex
