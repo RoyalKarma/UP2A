@@ -3,7 +3,7 @@
 \subsection{Jakými předpisy je upravována oblast kybernetické bezpernosti? Čemu se věnují?}
 \begin{itemize}
 
-    \item \textbf{ZoKB a NIS} - věnují se udělování práv a povinností + chránění informačních aktiv(= cokolv co je nutno chránít)
+    \item \textbf{ZoKB a směrnice NIS (Network and Information Systems)} - věnují se udělování práv a povinností + chránění informačních aktiv(= cokolv co je nutno chránít)
     \item \textbf{Zákon č.240/200sb., krizový zákon}
           \begin{itemize}
               \item Zákon stanovuje působnost a pravomoc státních orgánů a orgánů USC a práva a povinnosti fyzických a právnických osob při přípravě na krizové situace, kterou nesouvisejí se zajišťováním obrany České republiky před vnějším napadením
@@ -34,12 +34,14 @@
 \begin{itemize}
     \item \textbf{Kritická infrastruktura}
           \begin{itemize}
-              \item většina kritické infrastruktury je v soukromých rukou, i přesto že je důležitá pro chod státu a plnění jeho úloh.
+              \item Krizový zákon: \uv{\textit{kritickou infrastrukturou (se rozumí) prvek kritické infrastruktury nebo systém prvků kritické infrastruktury, narušení jehož funkce by mělo závažný dopad na bezpečnost státu, zabezpečení základních životních potřeb obyvatelstva, zdraví osob nebo ekonomiku státu}}
+              \item Většina kritické infrastruktury je v soukromých rukou, i přesto že je důležitá pro chod státu a plnění jeho úloh.
               \item S tím spojená rizika (cíl pro paralyzaci státu) i povinnosti
-              \item plyn,elektřina, voda, odpad...
+              \item Plyn,elektřina, voda, odpad...
           \end{itemize}
-    \item Kritická informační struktura:
+    \item \textbf{Kritická informační struktura}
           \begin{itemize}
+              \item Zákon o kybernetické bezpečnosti: \uv{\textit{kritickou informační infrastrukturou (se rozumí) prvek nebo systém prvků kritické infrastruktury v odvětví komunikační a informační systémy v oblasti kybernetické bezpečnosti}}
               \item kybernetická složka kritické infrastruktury (ovládací systémy...)
               \item ČR zabezpečuje NÚKIB, NCKB
               \item CERT týmy (Computer Emergency Response Team)
@@ -50,6 +52,12 @@
                               CZ.NIC
                     \end{itemize}
           \end{itemize}
+          \item \textbf{Provozovatel prvku kritické infrastruktury}
+          \begin{itemize}
+              \item Podle krizového zákona je pojem \uv{subjekt kritické infrastruktury} definován tímto pojmem
+              \item Odpovídá za ochranu prvku kritické infrastruktury
+          \end{itemize}
+          \item Tak trochu je vše definováno v kruzích
 \end{itemize}
 
 
@@ -75,8 +83,17 @@
     \item \textbf{Jde o takové subjekty které se podílí na významné elektronické komunikaci nebo spravují systém kritické infrastruktury }
           \begin{itemize}
               \item Nejsou to poskytovatelé obsahu, jednotliví uživatelé, ani provozovatele jiných služeb
-              \item určité subjekty jsou do činnosti zapojeny v případě tzv. kybernetického nebezpečí (pouze po určitou dobu, vyhlášeno předsedou vlády)
+              \item Určité subjekty jsou do činnosti zapojeny v případě tzv. kybernetického nebezpečí (pouze po určitou dobu, vyhlášeno předsedou vlády)
           \end{itemize}
+    \item Pravidla jsou spíše performativní, to je v technologii poměrně žádoucí
+    \item Technologie se stále vyvíjí, postupy, které se mohly zdát bezpečné kdysi, dnes mohou být prolomené
+    \item Využívá se \textbf{řízení rizik} - \uv{\textit{Každému, co jeho jest}} - Nemá smysl chránit každou domácí síť správně nakonfigurovaným Kerberosem, uvažuje se o možné následné škodě
+    \begin{itemize}
+        \item Prevence (standard ochrany podle ISO nebo NIST, bezpečnostní politika a procedury)
+        \item Reakce (řešení bezpečnostních incidentů)
+        \item Vyšetření (jak tomu zabránit)
+    \end{itemize}
+    \item Ani nelze vymáhat po každé domácnosti, pokud se chová nezodpovědně, nelze to ani kontrolovat, protože plošné preventivní sledování je zakázáno
 \end{itemize}
 
 
@@ -84,17 +101,21 @@
 \begin{itemize}
     \item Na úrovní práva:
           \begin{itemize}
-              \item porušení pracovněprávní povinnosti – vedoucí zaměstnanec kontroluje, že si nikam nepíšu heslo
               \item  porušení pracovněprávní povinnosti – vedoucí zaměstnanec kontroluje, že si nikam nepíšu heslo
               \item trestněprávní odpovědnost
               \item mezinárodní odpovědnost
           \end{itemize}
-    \item stát má funkce dávat:
+    \item Stát má funkce dávat:
           \begin{itemize}
               \item distributivní práva (vlastnictví, soukromí)
               \item nedistributivní práva (bezpečnost (kybernetická))
               \item hledá se rovnováha: nedistributivní práva se konstruují omezováním distributivních
           \end{itemize}
+    \item Cílem kybernetické bezpečnosti je ochrana aktiv. Co to vlastně znamená?
+    \item Aktivum je v kybernetické bezpečnosti cokoliv dosažitelné přes kyberprostor
+    \item Můžou to tedy dost dobře být i osobní údaje (Určitě \textit{správce významného informačního systému} bude muset splňovat všechny povinnosti správce, mezi něž patří záměrná a standardní ochrana osobních údajů a zabezpečení zpracování)
+    \item Nejsou tedy mezi zákony přímé odkazy, ale fungují společně
+    \item Správce osobních údajů musí posuzovat rizika
 \end{itemize}
 
 
@@ -106,6 +127,30 @@
     \item V kybernetické bezpečnosti se používají performativní pravidla (cíl, ne cesta)
     \item Compliance - soulad s pravidly bezpečnosti (Pokud je někdo compliant, splňuje, co má)
     \item Používá se Risk-Based Approach - Každý si riziko musí uvědomit sám a večerku není potřeba zabezpečovat tolik jako vojenskou základnu
-    \item NÚKIB vydává varování podle již vyřešených incidentů a povinným subjektům stanoví lhůtu, do které musí implementovat jím navržené zvýšení bezpečnosti
+    \item Koloběh řízení rizik
+    \begin{itemize}
+        \item Prevence
+        \begin{itemize}
+            \item Standard ochrany ISO/NIST
+            \item Bezpečnostní politika
+            \item Bezpečnostní procedury
+            \item \textbf{Hodnocení bezpečnosti}
+        \end{itemize}
+        \item Reakce
+        \begin{itemize}
+            \item Co se děje?
+            \item Proč se to děje?
+            \item Jak to zastavit?
+            \item Řešení bezpečnostních incidentů
+        \end{itemize}
+        \item Vyšetření
+        \begin{itemize}
+            \item Jak se to stalo?
+            \item Odkud to přišlo?
+            \item Jak tomu zabránit?
+        \end{itemize}
+    \end{itemize}
+    \item Pro výpočet se používá $ riziko = dopad \cdot hrozba \cdot zranitelnost $
+    \item Metodiku pro přesný výpočet vydává NÚKIB
+    \item NÚKIB také vydává varování podle již vyřešených incidentů a povinné subjekty \textbf{musí} tyto varování vzít v úvahu při analýze rizik
 \end{itemize}
-//TODO mrknout sem znova, až budeme mít prezentaci k dispozici
